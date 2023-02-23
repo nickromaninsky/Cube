@@ -1,3 +1,5 @@
+#Program that solves a cube
+
 import sys
 import pygame
 from rubik_solver import utils
