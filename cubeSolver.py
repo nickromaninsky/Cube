@@ -126,9 +126,11 @@ def draw_window():
     text6_surface = font.render("Enter White Side (45 - 53): ", True, black)
     screen.blit(text6_surface, (100, 600))
 
-    solution_surface = font.render("1.: ", True, black)
-    screen.blit(solution_surface, (1000, 300)) 
+    solution_surface = font2.render("Step One: Position cube like this, with yellow center piece on top and red center", True, black)
+    screen.blit(solution_surface, (415, 50)) 
 
+    solution_surface = font2.render("piece facing you. The center piece of each side never moves and tells you what color that side will be when the cube is solved.", True, black)
+    screen.blit(solution_surface, (415, 75)) 
 
     # render the input boxes
     pygame.draw.rect(screen, colors[0], input_box1, 2)
@@ -188,18 +190,18 @@ def draw_window():
     
 
 
-    screen.blit(cube_image, (415, 525))
+    #screen.blit(cube_image, (415, 525))
 
-    screen.blit(order_image, (415, 70))
+    #screen.blit(order_image, (415, 70))
 
-    text8_surface = font2.render("You MUST hold the cube like this the whole time. Look at the other sides from this angle.", True, black)
-    screen.blit(text8_surface, (415, 500))
+    #text8_surface = font2.render("You MUST hold the cube like this the whole time. Look at the other sides from this angle.", True, black)
+    #screen.blit(text8_surface, (415, 500))
     
-    text100_surface = font2.render("Position cube like this, with yellow center peice on top and red center peice facing you.", True, black)
-    screen.blit(text100_surface, (415, 475))
+    #text100_surface = font2.render("Position cube like this, with yellow center peice on top and red center peice facing you.", True, black)
+    #screen.blit(text100_surface, (415, 475))
     
-    text400_surface = font2.render("Type in the colors in this order. Type in the first letter of the color for each facelet.", True, black)
-    screen.blit(text400_surface, (400, 50))
+    #text400_surface = font2.render("Type in the colors in this order. Type in the first letter of the color for each facelet.", True, black)
+    #screen.blit(text400_surface, (400, 50))
     pygame.display.update()
 
 def main():
