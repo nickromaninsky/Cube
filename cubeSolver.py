@@ -1,5 +1,4 @@
 #Program that solves a cube
-# hola
 
 import sys
 import pygame
@@ -127,8 +126,8 @@ def draw_window():
     text6_surface = font.render("Enter White Side (45 - 53): ", True, black)
     screen.blit(text6_surface, (100, 600))
 
-    #solution_surface = font.render("Solution: ", True, black)
-    #screen.blit(solution_surface, (1000, 300)) 
+    solution_surface = font.render("1.: ", True, black)
+    screen.blit(solution_surface, (1000, 300)) 
 
 
     # render the input boxes
