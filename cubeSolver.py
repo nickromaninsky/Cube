@@ -1,4 +1,4 @@
-#Program that solves a cube
+#Program that solves a Rubik's Cube
 
 import sys
 import pygame
