@@ -196,16 +196,16 @@ def draw_window():
 
     screen.blit(cube_image, (340, 100))
 
-    screen.blit(order_image, (950, 400))
+    screen.blit(order_image, (230, 400))
 
     text8_surface = font2.render("Enter colors of scramble into fields at left in the numeral order set out below. Type in the first lettor of each color.", True, black)
     screen.blit(text8_surface, (340, 375))
 
 
-    screen.blit(example_image, (340, 400))
+    screen.blit(example_image, (800, 400))
 
     text8_surface = font2.render("Example: gwryygrgo", True, black)
-    screen.blit(text8_surface, (375, 600))
+    screen.blit(text8_surface, (850, 600))
     
     text100_surface = font2.render("Step Two: Click solve and execute moves! Be sure to", True, black)
     screen.blit(text100_surface, (1100, 100))
