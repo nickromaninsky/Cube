@@ -135,28 +135,28 @@ notation_image = pygame.image.load('notation.webp')
 
 # create the input boxes
 
-# define input_box1 as a py game rectangle located at 25 across and 125 down and a size of 300 pixels * 50 pixels
-input_box1 = pygame.Rect(25, 125, 300, 50)
+# define input_box1 as a py game rectangle located at 5 across and 125 down and a size of 300 pixels * 50 pixels
+input_box1 = pygame.Rect(5, 125, 300, 50)
 
 
-# define input_box2 as a py game rectangle located at 25 across and 225 down and a size of 300 pixels * 50 pixels
-input_box2 = pygame.Rect(25, 225, 300, 50)
+# define input_box2 as a py game rectangle located at 5 across and 225 down and a size of 300 pixels * 50 pixels
+input_box2 = pygame.Rect(5, 225, 300, 50)
 
 
-# define input_box3 as a py game rectangle located at 25 across and 325 down and a size of 300 pixels * 50 pixels
-input_box3 = pygame.Rect(25, 325, 300, 50)
+# define input_box3 as a py game rectangle located at 5 across and 325 down and a size of 300 pixels * 50 pixels
+input_box3 = pygame.Rect(5, 325, 300, 50)
 
 
-# define input_box4 as a py game rectangle located at 25 across and 425 down and a size of 300 pixels * 50 pixels
-input_box4 = pygame.Rect(25, 425, 300, 50)
+# define input_box4 as a py game rectangle located at 5 across and 425 down and a size of 300 pixels * 50 pixels
+input_box4 = pygame.Rect(5, 425, 300, 50)
 
 
-# define input_box5 as a py game rectangle located at 25 across and 525 down and a size of 300 pixels * 50 pixels
-input_box5 = pygame.Rect(25, 525, 300, 50)
+# define input_box5 as a py game rectangle located at 5 across and 525 down and a size of 300 pixels * 50 pixels
+input_box5 = pygame.Rect(5, 525, 300, 50)
 
 
-# define input_box6 as a py game rectangle located at 25 across and 625 down and a size of 300 pixels * 50 pixels
-input_box6 = pygame.Rect(25, 625, 300, 50)
+# define input_box6 as a py game rectangle located at 5 across and 625 down and a size of 300 pixels * 50 pixels
+input_box6 = pygame.Rect(5, 625, 300, 50)
 
 
 # "colors" as py game color black * 6
@@ -356,57 +356,57 @@ def draw_window():
 
 
 
-    # render "Enter Yellow Side (0 - 8)" as text1_surface that is true and black in color
-    text1_surface = font.render("Enter Yellow Side (0 - 8)", True, black)
+    # render "Enter Yellow Side (#0 - 8)" as text1_surface that is true and black in color
+    text1_surface = font.render("Enter Yellow Side (#0 - 8)", True, black)
 
 
-    # display text1_surface to 25 pixels across and 100 pixels down
-    screen_surface.blit(text1_surface, (25, 100))
-
-
-
-    # render "Enter Blue Side (9 - 17)" as text2_surface that is true and black in color
-    text2_surface = font.render("Enter Blue Side (9 - 17)", True, black)
-
-
-    # display text2_surface to 25 pixels across and 200 pixels down
-    screen_surface.blit(text2_surface, (25, 200))
+    # display text1_surface to 5 pixels across and 100 pixels down
+    screen_surface.blit(text1_surface, (5, 100))
 
 
 
-    # render "Enter Red Side (18 - 26)" as text3_surface that is true and black in color
-    text3_surface = font.render("Enter Red Side (18 - 26)", True, black)
+    # render "Enter Blue Side (#9 - 17)" as text2_surface that is true and black in color
+    text2_surface = font.render("Enter Blue Side (#9 - 17)", True, black)
 
 
-    # display text3_surface to 25 pixels across and 300 pixels down
-    screen_surface.blit(text3_surface, (25, 300))
-
-
-
-    # render "Enter Green Side (27 - 35)" as text4_surface that is true and black in color
-    text4_surface = font.render("Enter Green Side (27 - 35)", True, black)
-
-
-    # display text4_surface to 25 pixels across and 400 pixels down
-    screen_surface.blit(text4_surface, (25, 400))
+    # display text2_surface to 5 pixels across and 200 pixels down
+    screen_surface.blit(text2_surface, (5, 200))
 
 
 
-    # render "Enter Orange Side (36 - 44)" as text5_surface that is true and black in color
-    text5_surface = font.render("Enter Orange Side (36 - 44)", True, black)
+    # render "Enter Red Side (#18 - 26)" as text3_surface that is true and black in color
+    text3_surface = font.render("Enter Red Side (#18 - 26)", True, black)
 
 
-    # display text5_surface to 25 pixels across and 500 pixels down
-    screen_surface.blit(text5_surface, (25, 500))
+    # display text3_surface to 5 pixels across and 300 pixels down
+    screen_surface.blit(text3_surface, (5, 300))
 
 
 
-    # render "Enter White Side (45 - 53)" as text6_surface that is true and black in color
-    text6_surface = font.render("Enter White Side (45 - 53)", True, black)
+    # render "Enter Green Side (#27 - 35)" as text4_surface that is true and black in color
+    text4_surface = font.render("Enter Green Side (#27 - 35)", True, black)
 
 
-    # display_text6 surface to 25 pixels across and 600 pixels down
-    screen_surface.blit(text6_surface, (25, 600))
+    # display text4_surface to 5 pixels across and 400 pixels down
+    screen_surface.blit(text4_surface, (5, 400))
+
+
+
+    # render "Enter Orange Side (#36 - 44)" as text5_surface that is true and black in color
+    text5_surface = font.render("Enter Orange Side (#36 - 44)", True, black)
+
+
+    # display text5_surface to 5 pixels across and 500 pixels down
+    screen_surface.blit(text5_surface, (5, 500))
+
+
+
+    # render "Enter White Side (#45 - 53)" as text6_surface that is true and black in color
+    text6_surface = font.render("Enter White Side (#45 - 53)", True, black)
+
+
+    # display_text6 surface to 5 pixels across and 600 pixels down
+    screen_surface.blit(text6_surface, (5, 600))
 
 
 
