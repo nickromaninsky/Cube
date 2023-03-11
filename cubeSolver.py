@@ -69,8 +69,8 @@ FPS = 60
 
 
 
-# set the window caption to "Rubik's Cube Solver"
-pygame.display.set_caption("Rubik's Cube Solver")
+# set the window caption to "3x3x3 Rubik's Cube Solver"
+pygame.display.set_caption("3x3x3 Rubik's Cube Solver")
 
 
 
@@ -101,8 +101,8 @@ screen_surface = pygame.display.set_mode((screen_width, screen_height))
 
 
 
-# define "cube_image" as the image "cube_image1.jpeg" on user's hard drive
-cube_image = pygame.image.load('cube_image1.jpeg')
+# define "cube_image" as the image "how_to_hold_cube.jpeg" on user's hard drive
+cube_image = pygame.image.load('how_to_hold_cube.jpeg')
 
 
 # update cube_image to cube_image with a size of 250 pixels * 250 pixels
@@ -425,6 +425,14 @@ def draw_window():
     # display stepTwo_urface to 340 pixels across and 75 pixels down
     screen_surface.blit(stepTwo_surface, (340, 75)) 
 
+
+
+    # render "3x3x3 Rubik's Cube Solver" as text_surface that is true and black in color
+    text_surface = font.render("3x3x3 Rubik's Cube Solver", True, black)
+
+
+    # display text_surface to 25 pixels across and 400 pixels down
+    screen_surface.blit(text_surface, (340, 15))
 
 
 
