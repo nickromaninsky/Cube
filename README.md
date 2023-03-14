@@ -1,7 +1,7 @@
 How to run the program
 
 Step One: Download Files
-Open the Git Hub repository (the URL where theproject resides.)
+Open the Git Hub repository (the URL where the project resides.)
 Click the green "Code" button, then "Download as Zip" at the bottom.
 
 
