@@ -96,7 +96,7 @@ screen_width = info.current_w
 screen_height = info.current_h
 
 
-# let the screen_surface be displaying the user's screen_surface width and screen_surface height
+# set the screen_surface to be displaying the user's screen_surface width and screen_surface height
 screen_surface = pygame.display.set_mode((screen_width, screen_height))
 
 
@@ -128,8 +128,12 @@ example_image = pygame.transform.scale(example_image, (250, 250))
 
 
 
-# define "notation_image" as the image "notation.webp" on user's hard drive
-notation_image = pygame.image.load('notation.webp')           
+# define "notation_image" as the image "notation.png" on user's hard drive
+notation_image = pygame.image.load('notation.png')           
+
+
+# update notation_image to notation_image with a size of 550 pixels * 350 pixels
+notation_image = pygame.transform.scale(notation_image, (550, 350))
 
 
 
@@ -171,16 +175,16 @@ text = [''] * 6
 
 
 
-# create the quit button as a py game rectangle located at 1350 pixels across and 15 pixels down with a size of 100 pixels * 50 pixels
-quit_button = pygame.Rect(1350, 15, 100, 50)
+# create the quit button as a py game rectangle located at 1285 pixels across and 15 pixels down with a size of 100 pixels * 50 pixels
+quit_button = pygame.Rect(1285, 15, 100, 50)
 
 
-# create the again button as a py game rectangle located at 1150 pixels across and 15 pixels down with a size of 175 pixels * 50 pixels
-again_button = pygame.Rect(1150, 15, 175, 50)
+# create the again button as a py game rectangle located at 1285 pixels across and 15 pixels down with a size of 175 pixels * 50 pixels
+again_button = pygame.Rect(1285, 100, 175, 50)
 
 
-# create the solve button as a py game rectangle located at 1200 pixels across and 15 pixels down with a size of 125 pixels * 50 pixels
-solve_button = pygame.Rect(1200, 200, 125, 50)
+# create the solve button as a py game rectangle located at 1285 pixels across and 185 pixels down with a size of 125 pixels * 50 pixels
+solve_button = pygame.Rect(1285, 185, 125, 50)
 
 
 
@@ -269,7 +273,7 @@ def handle_input_events(event):
             if box.collidepoint(event.pos):
 
 
-                # active[i] = not active[i]
+                # make all 6 boxes active
                 active[i] = not active[i]
             
 
@@ -277,7 +281,7 @@ def handle_input_events(event):
             else:
 
 
-                # active boxes = false
+                # set all 6 boxes to be not active
                 active[i] = False
 
 
@@ -289,21 +293,16 @@ def handle_input_events(event):
 
     
 
-    if event.type == pygame.MOUSEBUTTONDOWN:
-        if event.button == 4: # scroll up
-            pygame.surface.scroll()
-        elif event.button == 5: # scroll down
-            print("2")
-    elif event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_UP: # move up
-            print("3")
-        elif event.key == pygame.K_DOWN: # move down
-            print("4")
+    
 
 
 
 
+
+    # if the user presses a key down then do the following
     if event.type == pygame.KEYDOWN:
+
+
         # in the each box
         for i in range(len(active)):
 
@@ -351,7 +350,7 @@ def draw_window():
 
 
 
-    # fil the screen_surface with the color "white" (rgb value of 255, 255, 255)
+    # fill the screen_surface with the color "white" (rgb value of 255, 255, 255)
     screen_surface.fill(white)
 
 
@@ -410,20 +409,28 @@ def draw_window():
 
 
 
-    # render "Step One: Scramble cube as much as desired. Position scrambled cube to match Fig. One, with yellow center piece on top and red" as stepOne_surface with font2 (smaller font) that is true and black in color
-    stepOne_surface = font2.render("Step One: Scramble cube as much as desired. Position scrambled cube to match Fig. One, with yellow center piece on top", True, black)
+    # render "Step One: Start with scrambled cube. Position a scrambled cube to match FIG. 1," as stepOne_surface with font2 (smaller font) that is true and black in color
+    stepOne_surface = font2.render("Step One: Start with a scrambled cube. Position scrambled cube to match FIG. 1,", True, black)
 
 
     # display stepOne_surface to 340 pixels across and 50 pixels down
     screen_surface.blit(stepOne_surface, (340, 50)) 
 
 
-    # render "center piece facing you. The center piece of each side never moves and tells you what color that side will be when the cube is solved." as stepTwo_surface with font2 (smaller font) that is true and black in color
-    stepTwo_surface = font2.render("and the red center piece facing you. The center piece of each side never moves and tells you what color that side will be when the cube is solved.", True, black)
+    # render "with the yellow center piece on top and the red center piece facing you. The center" as stepTwo_surface with font2 (smaller font) that is true and black in color
+    stepTwo_surface = font2.render("with the yellow center piece on top and the red center piece facing you. The center", True, black)
     
 
     # display stepTwo_urface to 340 pixels across and 75 pixels down
-    screen_surface.blit(stepTwo_surface, (340, 75)) 
+    screen_surface.blit(stepTwo_surface, (340, 75))
+
+
+    # render "piece of each side never moves and tells you what color that side will be when the cube is solved." as stepTwo_surface with font2 (smaller font) that is true and black in color
+    stepTwo_surface = font2.render("piece of each side never moves and tells you what color that side will be when the cube is solved.", True, black)
+    
+
+    # display stepTwo_urface to 340 pixels across and 100 pixels down
+    screen_surface.blit(stepTwo_surface, (340, 100)) 
 
 
 
@@ -431,7 +438,7 @@ def draw_window():
     text_surface = font.render("3x3x3 Rubik's Cube Solver", True, black)
 
 
-    # display text_surface to 25 pixels across and 400 pixels down
+    # display text_surface to 340 pixels across and 15 pixels down
     screen_surface.blit(text_surface, (340, 15))
 
 
@@ -562,7 +569,19 @@ def draw_window():
         global answer_surface
 
 
-        
+
+
+
+
+        # set text401_surface to Solution:" which is true and black in color using font (the bigger one)
+        text401_surface = font.render("Solution:", True, black)
+
+
+        # display the text 401 surface to the screen_surface at 5 pixels across and 725 pixels down
+        screen_surface.blit(text401_surface, (5, 725))
+
+
+
         # set cube as text but it's a string
         cube = (str(text))
 
@@ -586,11 +605,13 @@ def draw_window():
         # set new_cube5 equal to new_cube4 but " " is relaced with ""
         new_cube5 = new_cube4.replace(" ", "")
 
+        # if the cube is already solved then do the following
         if (new_cube5 == "yyyyyyyyybbbbbbbbbrrrrrrrrrgggggggggooooooooowwwwwwwww"):
 
+            # set the solution_text to say "Cube is already solved."
             solution_text = "Cube is already solved."
 
-
+        # else
         else: 
             
             
@@ -607,114 +628,119 @@ def draw_window():
         answer_surface = font.render(solution_text, True, black)
 
 
-        # display the answer surface to the screen_surface at 600 pixels across and 125 pixels down
-        screen_surface.blit(answer_surface, (600, 125))
+        # display the answer surface to the screen_surface at 5 pixels across and 750 pixels down
+        screen_surface.blit(answer_surface, (5, 750))
 
     
 
 
-    # display the cube image to the screen_surface at 340 pixels across and 100 pixels down
-    screen_surface.blit(cube_image, (340, 100))
+    # display the cube image to the screen_surface at 1000 pixels across and 10 pixels down
+    screen_surface.blit(cube_image, (1000, 10))
 
 
-    # display the order image to the screen_surface at 230 pixels across and 400 pixels down
-    screen_surface.blit(order_image, (230, 400))
-
-
-
-    # set text8_surface to "Step Two: Enter colors of scramble into fields at left in the numeral order set out below in Fig. 2 while keeping yellow center on top and red center facing you." which is true and black in color using font2 (the smaller font)
-    text8_surface = font2.render("Step Two: Enter colors of scramble into fields at left in the numeral order set out below in Fig. 2 while keeping yellow center on top and red center facing you.", True, black)
-
-
-    #  display the text8 surface to the screen_surface at 340 pixels across and 350 pixels down
-    screen_surface.blit(text8_surface, (340, 350))
-
-
-    # set text8_surface to "Type in the first letter of each color, as shown in Fig. Three. (For White: Note that 45 - 47 is adjacent to red 24 - 26.)" which is true and black in color using font2 (the smaller font)
-    text8_surface = font2.render("Type in the first letter of each color, as shown in Fig. Three. (For White: Note that 45 - 47 is adjacent to red 24 - 26.)", True, black)
-
-
-    #  display the text8 surface to the screen_surface at 340 pixels across and 375 pixels down
-    screen_surface.blit(text8_surface, (340, 375))
+    # display the order image to the screen_surface at 890 pixels across and 275 pixels down
+    screen_surface.blit(order_image, (890, 275))
 
 
 
-    # display the example image to the screen_surface at 725 pixels across and 400 pixels down
-    screen_surface.blit(example_image, (725, 400))
+    # set text8_surface to "Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2" which is true and black in color using font2 (the smaller font)
+    text8_surface = font2.render("Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2", True, black)
+
+
+    # display the text8 surface to the screen_surface at 340 pixels across and 150 pixels down
+    screen_surface.blit(text8_surface, (340, 150))
+
+
+    # set text8_surface to "Type in the first letter of each color," which is true and black in color using font2 (the smaller font)
+    text8_surface = font2.render("while keeping yellow center on top and red center facing you. Type in the first letter of each color,", True, black)
+
+
+    # display the text8 surface to the screen_surface at 340 pixels across and 175 pixels down
+    screen_surface.blit(text8_surface, (340, 175))
+
+
+    # set text_surface to "as shown in FIG. 3. (For White Side: Note that #45 - 47 is adjacent are red #24 - 26.)" which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("as shown in FIG. 3. (For White Side: Note that #45 - 47 are adjacent to red #24 - 26.)", True, black)
+
+
+    # display the text surface to the screen_surface at 340 pixels across and 200 pixels down
+    screen_surface.blit(text_surface, (340, 200))
 
 
 
-    # display the notation image to the screen_surface at 975 pixels across and 525 pixels down
-    screen_surface.blit(notation_image, (975, 525))
+    # display the example image to the screen_surface at 1250 pixels across and 675 pixels down
+    screen_surface.blit(example_image, (1250, 675))
 
 
-    # set text8_surface to "Example: gwryygrgo" which is true and black in color using font2 (the smaller font)
-    text8_surface = font2.render("Example: gwryygrgo", True, black)
+
+    # display the notation image to the screen_surface at 330 pixels across and 325 pixels down
+    screen_surface.blit(notation_image, (330, 325))
 
 
-    # display the text8 surface to the screen_surface at 775 pixels across and 600 pixels down
-    screen_surface.blit(text8_surface, (775, 600))
+    # set text_surface to "Example: gwryygrgo" which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("Example: gwryygrgo", True, black)
+
+
+    # display the text surface to the screen_surface at 1300 pixels across and 900 pixels down
+    screen_surface.blit(text_surface, (1300, 850))
     
 
     
-    # set text100_surface to "Step Three: Click solve and execute moves using the chart" which is true and black in color using font2 (the smaller font)
-    text100_surface = font2.render("Step Three: Click solve and execute moves using the chart", True, black)
+    # set text100_surface to "Step Three: Click 'Solve'. Solution will appear below. Execute moves using the pictures" which is true and black in color using font2 (the smaller font)
+    text100_surface = font2.render("Step Three: Click 'Solve'. Solution will appear below. Execute moves using the pictures", True, black)
 
 
-    # display the text 100 surface to the screen_surface at 1050 pixels across and 425 pixels down
-    screen_surface.blit(text100_surface, (1050, 425))
+    # display the text 100 surface to the screen_surface at 340 pixels across and 250 pixels down
+    screen_surface.blit(text100_surface, (340, 250))
     
 
-    # set text400_surface to "below. Be sure to maintain position of cube with yellow center" which is true and black in color using font2 (the smaller font)
-    text400_surface = font2.render("below. Be sure to maintain position of cube with yellow center", True, black)
+    # set text400_surface to "in FIG. 4. Be sure to maintain position of cube with yellow center and red" which is true and black in color using font2 (the smaller font)
+    text400_surface = font2.render("in FIG. 4. Be sure to maintain position of cube with yellow center on top and red", True, black)
 
 
-    # display the text 400 surface to the screen_surface at 1050 pixels across and 450 pixels down
-    screen_surface.blit(text400_surface, (1050, 450))
+    # display the text 400 surface to the screen_surface at 1050 pixels across and 275 pixels down
+    screen_surface.blit(text400_surface, (340, 275))
     
     
-    # set text401_surface to "on top and red center facing you." which is true and black in color using font2 (the smaller font)
-    text401_surface = font2.render("on top and red center facing you.", True, black)
+    # set text401_surface to "center facing you." which is true and black in color using font2 (the smaller font)
+    text401_surface = font2.render("center facing you. Note that a '2' next to a move means execute the move twice.", True, black)
 
 
-    # display the text 401 surface to the screen_surface at 1050 pixels across and 475 pixels down
-    screen_surface.blit(text401_surface, (1050, 475))
+    # display the text 401 surface to the screen_surface at 1050 pixels across and 300 pixels down
+    screen_surface.blit(text401_surface, (340, 300))
 
 
 
-    # set text401_surface to "Fig. Three" which is true and black in color using font (the bigger font)
-    text401_surface = font.render("Fig. Three", True, black)
+
+
+    # set text401_surface to "FIG. 3" which is true and black in color using font (the bigger font)
+    text401_surface = font.render("FIG. 3", True, black)
  
 
-    # display the text 401 surface to the screen_surface at 785 pixels across and 415 pixels down
-    screen_surface.blit(text401_surface, (785, 415))
+    # display the text 401 surface to the screen_surface at 1325 pixels across and 685 pixels down
+    screen_surface.blit(text401_surface, (1325, 685))
 
 
 
-    # set text401_surface to "Fig. Two" which is true and black in color using font (the bigger font)
-    text401_surface = font.render("Fig. Two", True, black)
+    # set text401_surface to "FIG. 2" which is true and black in color using font (the bigger font)
+    text401_surface = font.render("FIG. 2", True, black)
 
 
-    # display the text 401 surface to the scrren at 550 pixels across and 475 pixels down 
-    screen_surface.blit(text401_surface, (550, 475))
-
-
-
-    # set text401_surface to "Fig. One" which is true and black in color using font (the bigger one)
-    text401_surface = font.render("Fig. One", True, white)
-
-
-    # display the text 401 surface to the screen_surface at 430 pixels across and 323 pixels down
-    screen_surface.blit(text401_surface, (430, 323))
+    # display the text 401 surface to the scrren at 1200 pixels across and 350 pixels down 
+    screen_surface.blit(text401_surface, (1200, 350))
 
 
 
-    # set text401_surface to "2 = Do Move Twice" which is true and black in color using font (the bigger one)
-    text401_surface = font.render("2 = Do Move Twice", True, black)
+    # set text401_surface to "FIG. 1" which is true and black in color using font (the bigger one)
+    text401_surface = font.render("FIG. 1", True, white)
 
 
-    # display the text 401 surface to the screen_surface at 900 pixels across and 215 pixels down
-    screen_surface.blit(text401_surface, (900, 215))
+    # display the text 401 surface to the screen_surface at 1095 pixels across and 232 pixels down
+    screen_surface.blit(text401_surface, (1095, 232))
+
+
+
+    
 
 
     
@@ -744,12 +770,12 @@ def main():
     while running:
 
 
-        #update the display using the py game disply.update function
+        # update the display using the py game disply.update function
         pygame.display.update()
 
 
 
-        # clock can only tick as fast as FPS (previousluy set to 60)
+        # clock can only tick as fast as FPS (previously set to 60)
         clock.tick(FPS)
 
 
@@ -783,10 +809,5 @@ def main():
 main()
 
 
-
-
-# these final lines of code are for if someone imports this file into their own project. it makes the main function not imediately start unless they explicitly state main() in their code
-if __name__ == "__main__":
-    main()
 
 
