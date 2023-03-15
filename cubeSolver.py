@@ -409,8 +409,8 @@ def draw_window():
 
 
 
-    # render "Step One: Start with scrambled cube. Position a scrambled cube to match FIG. 1," as stepOne_surface with font2 (smaller font) that is true and black in color
-    stepOne_surface = font2.render("Step One: Start with a scrambled cube. Position scrambled cube to match FIG. 1,", True, black)
+    # render "Step One: Start with scrambled cube. Position a scrambled cube as in FIG. 1," as stepOne_surface with font2 (smaller font) that is true and black in color
+    stepOne_surface = font2.render("Step One: Start with a scrambled cube. Position scrambled cube as in FIG. 1,", True, black)
 
 
     # display stepOne_surface to 340 pixels across and 50 pixels down
@@ -647,29 +647,37 @@ def draw_window():
     text8_surface = font2.render("Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2", True, black)
 
 
-    # display the text8 surface to the screen_surface at 340 pixels across and 150 pixels down
-    screen_surface.blit(text8_surface, (340, 150))
+    # display the text8 surface to the screen_surface at 340 pixels across and 130 pixels down
+    screen_surface.blit(text8_surface, (340, 130))
 
 
-    # set text8_surface to "Type in the first letter of each color," which is true and black in color using font2 (the smaller font)
-    text8_surface = font2.render("while keeping yellow center on top and red center facing you. Type in the first letter of each color,", True, black)
+    # set text8_surface to Type in the first letter of each color as shown in FIG. 3. (When entering Blue, Red, Green," which is true and black in color using font2 (the smaller font)
+    text8_surface = font2.render("Type in the first letter of each color as shown in FIG. 3. (When entering Blue, Red, Green,", True, black)
 
 
-    # display the text8 surface to the screen_surface at 340 pixels across and 175 pixels down
-    screen_surface.blit(text8_surface, (340, 175))
+    # display the text8 surface to the screen_surface at 340 pixels across and 155 pixels down
+    screen_surface.blit(text8_surface, (340, 155))
 
 
-    # set text_surface to "as shown in FIG. 3. (For White Side: Note that #45 - 47 is adjacent are red #24 - 26.)" which is true and black in color using font2 (the smaller font)
-    text_surface = font2.render("as shown in FIG. 3. (For White Side: Note that #45 - 47 are adjacent to red #24 - 26.)", True, black)
+    # set text_surface to "and Orange sides, note yellow center piece must be on top.  In addition, note that Yellow Side #6 - 8" which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("and Orange sides, note yellow center piece must be on top.  In addition, note that Yellow Side #6 - 8", True, black)
 
 
-    # display the text surface to the screen_surface at 340 pixels across and 200 pixels down
-    screen_surface.blit(text_surface, (340, 200))
+    # display the text surface to the screen_surface at 340 pixels across and 180 pixels down
+    screen_surface.blit(text_surface, (340, 180))
+
+
+    # set text_surface to "must be adjacent to Red Side #18 - 20 and White Side #45-47 must be adjacent to Red Side #24-26.)" which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("must be adjacent to Red Side #18 - 20 and White Side #45-47 must be adjacent to Red Side #24-26.)", True, black)
+
+
+    # display the text surface to the screen_surface at 340 pixels across and 205 pixels down
+    screen_surface.blit(text_surface, (340, 205))
 
 
 
-    # display the example image to the screen_surface at 1250 pixels across and 675 pixels down
-    screen_surface.blit(example_image, (1250, 675))
+    # display the example image to the screen_surface at 1250 pixels across and 650 pixels down
+    screen_surface.blit(example_image, (1250, 650))
 
 
 
@@ -681,8 +689,8 @@ def draw_window():
     text_surface = font2.render("Example: gwryygrgo", True, black)
 
 
-    # display the text surface to the screen_surface at 1300 pixels across and 900 pixels down
-    screen_surface.blit(text_surface, (1300, 850))
+    # display the text surface to the screen_surface at 1300 pixels across and 825 pixels down
+    screen_surface.blit(text_surface, (1300, 825))
     
 
     
@@ -717,8 +725,8 @@ def draw_window():
     text401_surface = font.render("FIG. 3", True, black)
  
 
-    # display the text 401 surface to the screen_surface at 1325 pixels across and 685 pixels down
-    screen_surface.blit(text401_surface, (1325, 685))
+    # display the text 401 surface to the screen_surface at 1325 pixels across and 660 pixels down
+    screen_surface.blit(text401_surface, (1325, 660))
 
 
 
