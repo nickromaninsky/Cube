@@ -3,15 +3,16 @@ How to run the program
 Step One: Downloading Files
 
 Open the Git Hub repository (the URL where the project resides.)
-Click the green "Code" button, then "Download as Zip" at the bottom.
+Click the green "Code" button, then "Download Zip" at the bottom.
 
 
-Step Two: Downloading Python and Libraries
+Step Two: Downloading Python
 
 
 Windows:
 
-    Type "python" into the terminal and wait for the Microsoft Store to pop up.
+    Open the "Power Shell" app on your computer.
+    Type "python" into Power Shell and wait for the Microsoft Store to pop up.
     Download Python version 3.9, NOT any other version.
 
 Mac:
@@ -19,17 +20,21 @@ Mac:
     Go to www.python.org
     Download Python version 3.9, NOT any other version.
 
-Type in "pip3 install pygame" to your terminal.
+Step Three: Downloading Libraries
+
+Still in Power Shell, type in "pip3 install pygame" to your terminal.
 Type in "pip3 install rubik_solver" to your terminal.
 
-Step Three: Run the Program
+Step Four: Run the Program
 
 Windows Users:
 
-    Open the "Files" app and unzip the "Cube-main" folder that you downloaded.
-    Ensure that the "Cube-main" folder is directly in the Downloads and not in any other folder or sube folder.
+    Open the "Files" app and find the "Cube-main" zip folder that you downloaded.
+    Right click on the folder and click "Extract All".
+    In the popup, delete "\Cube-main" from the text box and click "Extract". (This ensures that the "Cube-main" folder is directly in the Downloads and not in any other folder or sub folder.)
+    Delete the original Cube-main zip folder.
     Open the "Power Shell" and type "cd Downloads\Cube-main"
-    Type in "python3 cubeSolver.py" to your terminal.
+    Type in "python3 cubeSolver.py" to the Power Shell.
 
 Mac Users:
 
