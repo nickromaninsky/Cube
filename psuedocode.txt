@@ -1,0 +1,249 @@
+include sys library
+include py game library
+include utils file from rubik_solver library
+include os library
+include subprocess library
+
+initilize py game
+
+define white as rgb value 255, 255, 255
+define black as rgb value 0, 0, 0
+define red as rgb value 255, 0, 0
+define green as rgb value 0, 255, 0
+define blue as rgb value 0, 0, 255
+define yellow as rgb value 255, 255, 0
+define purple as rgb value 128, 0, 128
+define orange as rgb value 255, 165, 0
+
+set "FPS" to integer 60
+set the window caption to "3x3x3 Rubik's Cube Solver"
+define "font" as a system font named arial of size 25
+define "font2" as a system font named arial of size 15
+define "info" as the pygame display info function
+define "screen_width" as the user's screen_surface width
+define "screen_height" as the user's screen_surface height
+set the screen_surface to be displaying the user's screen_surface width and screen_surface height\
+
+define "cube_image" as the image "how_to_hold_cube.jpeg" on user's hard drive
+update cube_image to cube_image with a size of 250 pixels * 250 pixels
+
+define "order_image" as the image "order.png" on user's hard drive
+update order_image to order_image with a size of 600 pixels * 400 pixels
+
+define "example_image" as the image "example.png" on user's hard drive
+update example_image to example_image with a size of 250 pixels * 250 pixels
+
+define "notation_image" as the image "notation.png" on user's hard drive
+update notation_image to notation_image with a size of 550 pixels * 350 pixels
+
+define input_box1 as a py game rectangle located at 5 across and 125 down and a size of 300 pixels * 50 pixels
+define input_box2 as a py game rectangle located at 5 across and 225 down and a size of 300 pixels * 50 pixels
+define input_box3 as a py game rectangle located at 5 across and 325 down and a size of 300 pixels * 50 pixels
+define input_box4 as a py game rectangle located at 5 across and 425 down and a size of 300 pixels * 50 pixels
+define input_box5 as a py game rectangle located at 5 across and 525 down and a size of 300 pixels * 50 pixels
+define input_box6 as a py game rectangle located at 5 across and 625 down and a size of 300 pixels * 50 pixels
+set the boxes to be black
+set the boxes to be inactive
+set the text in the boxes to be empty
+
+create the quit button as a py game rectangle located at 1285 pixels across and 15 pixels down with a size of 100 pixels * 50 pixels
+create the again button as a py game rectangle located at 1285 pixels across and 15 pixels down with a size of 175 pixels * 50 pixels
+create the solve button as a py game rectangle located at 1285 pixels across and 185 pixels down with a size of 125 pixels * 50 pixels
+
+set solve_clicked to false
+
+create a function named "solve"
+    create a global variable called solve_clicked
+    update the display using the pygame.display.update function in py game
+    set solve_clicked to true
+end solve function
+
+create a function named "handle_input_events" that takes an argument of event
+    create four global variables called active, colors, texts, and solve_clicked
+
+    if the event type is the py game function mouse button down (clicking) then do the following
+
+        if the quit button is collided (clicked) then do the following
+            set running to false
+            stop running the system
+    
+        if the again button is clicked then do the following
+
+            set command to "python3 cubeSolver.py" (the command that runs the program again)
+            run "command" in the terminal
+        
+        if the solve button is clicked then do the following
+
+            set solve_clicked to true
+
+        if solve_clicked is true then do the following
+
+            call the "solve" function
+
+        for all six boxes
+            if the box is clicked
+                make all 6 boxes active
+            if nothing else fit earlier conditions, do the following
+                set all 6 boxes to be not active
+            
+            if the boxes are clicked highlight them blue, if they aren't clicked then highlight them black
+    
+
+    if the user presses a key down then do the following
+        in the each box
+            if the box is active then do the following
+                if the key pressed is delete
+                    delete the most recently typed character
+                if the conditions don't meet the earlier conditionals
+                    add the unicode character to the text
+
+create a function named "draw_window"
+    create a global variable named running
+    create a global variable named solve_clicked
+    set clock to the py game fuction time.Clock
+    only let the clock "tick" as fast as FPS (earlier set to 60)
+    fill the screen_surface with the color "white" (rgb value of 255, 255, 255)
+
+    render "Enter Yellow Side (#0 - 8)" as text1_surface that is black
+    display text1_surface to 5 pixels across and 100 pixels down
+
+    render "Enter Blue Side (#9 - 17)" as text2_surface that is black
+    display text2_surface to 5 pixels across and 200 pixels down
+
+    render "Enter Red Side (#18 - 26)" as text3_surface that is black
+    display text3_surface to 5 pixels across and 300 pixels down
+
+    render "Enter Green Side (#27 - 35)" as text4_surface that is black
+    display text4_surface to 5 pixels across and 400 pixels down
+
+    render "Enter Orange Side (#36 - 44)" as text5_surface that is black
+    display text5_surface to 5 pixels across and 500 pixels down
+
+    render "Enter White Side (#45 - 53)" as text6_surface that is black
+    display_text6 surface to 5 pixels across and 600 pixels down
+
+    render "Step One: Start with scrambled cube. Position a scrambled cube to match FIG. 1," as stepOne_surface with font2 (smaller font) that is black
+    display stepOne_surface to 340 pixels across and 50 pixels down
+
+    render "with the yellow center piece on top and the red center piece facing you. The center" as stepTwo_surface with font2 (smaller font) that is black
+    display stepTwo_urface to 340 pixels across and 75 pixels down
+
+    render "piece of each side never moves and tells you what color that side will be when the cube is solved." as stepTwo_surface with font2 (smaller font) that is black
+    display stepTwo_urface to 340 pixels across and 100 pixels down
+
+    render "3x3x3 Rubik's Cube Solver" as text_surface that is black
+    display text_surface to 340 pixels across and 15 pixels down
+
+    draw a rectangle to the screen_surface
+    render a surface with the first text
+    display text_surface to the screen_surface
+
+    draw a rectangle to the screen_surface
+    render a surface with the second text
+    display text_surface to the screen_surface
+
+    draw a rectangle to the screen_surface
+    render a surface with the third text
+    display text_surface to the screen_surface
+
+    draw a rectangle to the screen_surface
+    render a surface with the fourth text
+    display text_surface to the screen_surface
+
+    draw a rectangle to the screen_surface
+    render a surface with the fifth text
+    display text_surface to the screen_surface
+
+    draw a rectangle to the screen_surface
+    render a surface with the sixth text
+    display text_surface to the screen_surface
+
+    draw the quit button rectangle
+    create a text_surface that contains "quit" which is black
+    display the quit text surface on the quit button
+
+    draw the again button rectangle
+    create a text_surface that contains "run again" which is black
+    display the again text surface on the again button
+
+    draw the solve button rectangle
+    create a text_surface that contains "solve" which is black
+    draw the again button rectangle
+
+    if solve_clicked is set to true then do the following
+        create a global variable called answer_surface
+
+        set text401_surface to Solution:" which is true and black in color using font (the bigger one)
+        display the text 401 surface to the screen_surface at 5 pixels across and 725 pixels down
+
+        set cube as text but it's a string
+        set new_cube1 equal to cube but "[" is relaced with " "
+        set new_cube2 equal to new_cube1 but "]" is relaced with " "
+        set new_cube3 equal to new_cube2 but "," is relaced with " "
+        set new_cube4 equal to new_cube3 but "'" is relaced with " "
+        set new_cube5 equal to new_cube4 but " " is relaced with ""
+
+        if the cube is already solved then do the following
+            set the solution_text to say "Cube is already solved."
+        else
+            set solution to new_cube5 solved using the Kociemba method
+            set solution_text to solution as a string
+        
+        set answer_surface to the solution_text which is true and black in color using the big font
+        display the answer surface to the screen_surface at 5 pixels across and 750 pixels down
+
+    display the cube image to the screen_surface at 1000 pixels across and 10 pixels down
+    display the order image to the screen_surface at 890 pixels across and 275 pixels down
+
+    set text8_surface to "Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2" which is true and black in color using font2 (the smaller font)
+    display the text8 surface to the screen_surface at 340 pixels across and 150 pixels down
+
+    set text8_surface to "Type in the first letter of each color," which is true and black in color using font2 (the smaller font)
+    display the text8 surface to the screen_surface at 340 pixels across and 175 pixels down
+
+    set text_surface to "as shown in FIG. 3. (For White Side: Note that #45 - 47 is adjacent are red #24 - 26.)" which is true and black in color using font2 (the smaller font)
+    display the text surface to the screen_surface at 340 pixels across and 200 pixels down
+
+    display the example image to the screen_surface at 1250 pixels across and 675 pixels down
+    display the notation image to the screen_surface at 330 pixels across and 325 pixels down
+
+    set text_surface to "Example: gwryygrgo" which is true and black in color using font2 (the smaller font)
+    display the text surface to the screen_surface at 1300 pixels across and 900 pixels down
+
+    set text400_surface to "in FIG. 4. Be sure to maintain position of cube with yellow center and red" which is true and black in color using font2 (the smaller font)
+    display the text 400 surface to the screen_surface at 1050 pixels across and 275 pixels down
+
+    set text401_surface to "center facing you." which is true and black in color using font2 (the smaller font)
+    display the text 401 surface to the screen_surface at 1050 pixels across and 300 pixels down
+
+    set text401_surface to "FIG. 3" which is true and black in color using font (the bigger font)
+    display the text 401 surface to the screen_surface at 1325 pixels across and 685 pixels down
+
+    set text401_surface to "FIG. 2" which is true and black in color using font (the bigger font)
+    display the text 401 surface to the scrren at 1200 pixels across and 350 pixels down 
+
+    set text401_surface to "FIG. 1" which is true and black in color using font (the bigger one)
+    display the text 401 surface to the screen_surface at 1095 pixels across and 232 pixels down
+
+    update the display using the py game display.update function
+
+create a function named "main"
+    set clock to the py game function time.Clock
+    set "running" to true
+
+    while running is true
+        update the display using the py game disply.update function
+        clock can only tick as fast as FPS (previously set to 60)
+
+    for the event in whatever event
+        if the event is "QUIT"
+            set running to false
+        
+        call the "handle_input_events" function with the argument "events"
+    call the "draw_window" function
+
+    update the display using the py game display.update function
+
+call the "main" function
+
+
