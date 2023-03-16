@@ -22,8 +22,8 @@ Mac:
 
 Step Three: Downloading Libraries
 
-Still in Power Shell, type in "pip3 install pygame" to your terminal.
-Type in "pip3 install rubik_solver" to your terminal.
+Still in Power Shell or terminal, type in "pip3 install pygame", then click enter.
+Type in "pip3 install rubik_solver", then click enter.
 
 Step Four: Run the Program
 
