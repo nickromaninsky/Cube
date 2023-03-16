@@ -643,36 +643,44 @@ def draw_window():
 
 
 
-    # set text8_surface to "Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2" which is true and black in color using font2 (the smaller font)
-    text8_surface = font2.render("Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2", True, black)
+    # set text8_surface to "Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2." which is true and black in color using font2 (the smaller font)
+    text8_surface = font2.render("Step Two: Enter colors of scramble into fields at left in the numerical order set out in FIG. 2.", True, black)
 
 
-    # display the text8 surface to the screen_surface at 340 pixels across and 130 pixels down
-    screen_surface.blit(text8_surface, (340, 130))
+    # display the text8 surface to the screen_surface at 340 pixels across and 125 pixels down
+    screen_surface.blit(text8_surface, (340, 125))
 
 
-    # set text8_surface to Type in the first letter of each color as shown in FIG. 3. (When entering Blue, Red, Green," which is true and black in color using font2 (the smaller font)
-    text8_surface = font2.render("Type in the first letter of each color as shown in FIG. 3. (When entering Blue, Red, Green,", True, black)
+    # set text8_surface to "Type in the first letter of each color as shown in FIG. 3. (When entering Yellow Side, position" which is true and black in color using font2 (the smaller font)
+    text8_surface = font2.render("Type in the first letter of each color as shown in FIG. 3. (When entering Yellow Side, position", True, black)
 
 
-    # display the text8 surface to the screen_surface at 340 pixels across and 155 pixels down
-    screen_surface.blit(text8_surface, (340, 155))
+    # display the text8 surface to the screen_surface at 340 pixels across and 150 pixels down
+    screen_surface.blit(text8_surface, (340, 150))
 
 
-    # set text_surface to "and Orange sides, note yellow center piece must be on top.  In addition, note that Yellow Side #6 - 8" which is true and black in color using font2 (the smaller font)
-    text_surface = font2.render("and Orange sides, note yellow center piece must be on top.  In addition, note that Yellow Side #6 - 8", True, black)
+    # set text_surface to "cube so yellow center piece faces you and orange center piece is on top. When entering Blue,"" which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("cube so yellow center piece faces you and orange center piece is on top. When entering Blue,", True, black)
 
 
-    # display the text surface to the screen_surface at 340 pixels across and 180 pixels down
-    screen_surface.blit(text_surface, (340, 180))
+    # display the text surface to the screen_surface at 340 pixels across and 175 pixels down
+    screen_surface.blit(text_surface, (340, 175))
 
 
-    # set text_surface to "must be adjacent to Red Side #18 - 20 and White Side #45-47 must be adjacent to Red Side #24-26.)" which is true and black in color using font2 (the smaller font)
-    text_surface = font2.render("must be adjacent to Red Side #18 - 20 and White Side #45-47 must be adjacent to Red Side #24-26.)", True, black)
+    # set text_surface to "Red, Green, and Orange Sides, yellow center piece should be on top. When entering White Side," which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("Red, Green, and Orange Sides, yellow center piece should be on top. When entering White Side,", True, black)
 
 
-    # display the text surface to the screen_surface at 340 pixels across and 205 pixels down
-    screen_surface.blit(text_surface, (340, 205))
+    # display the text surface to the screen_surface at 340 pixels across and 200 pixels down
+    screen_surface.blit(text_surface, (340, 200))
+
+
+    # set text_surface to "red center piece should be on top.)" which is true and black in color using font2 (the smaller font)
+    text_surface = font2.render("red center piece should be on top.)", True, black)
+
+
+    # display the text surface to the screen_surface at 340 pixels across and 225 pixels down
+    screen_surface.blit(text_surface, (340, 225))
 
 
 
