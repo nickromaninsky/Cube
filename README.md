@@ -23,7 +23,10 @@ Mac:
 Step Three: Downloading Libraries
 
 Still in Power Shell or terminal, type in "pip3 install pygame", then click enter.
+If this does not work, type "pip install pygame", then click enter.
+
 Type in "pip3 install rubik_solver", then click enter.
+If this does not work, type "pip install rubik_solver", then click enter.
 
 Step Four: Run the Program
 
@@ -34,7 +37,9 @@ Windows Users:
     In the popup, delete "\Cube-main" from the text box and click "Extract". (This ensures that the "Cube-main" folder is directly in the Downloads and not in any other folder or sub folder.)
     Delete the original Cube-main zip folder.
     Open the "Power Shell" and type "cd Downloads\Cube-main"
-    Type in "python3 cubeSolver.py" to the Power Shell.
+
+    Type in "python cubeSolver.py" to the Power Shell, then click enter.
+    If this does not work, type "python3 cubeSolver.py", then click enter.
 
 Mac Users:
 
@@ -42,6 +47,8 @@ Mac Users:
     Open the finder.
     Find the "Cube" folder in your recent files.
     Click and drag it into the terminal, then open the terminal and click enter.
-    Type in "python3 cubeSolver.py" to your terminal.
+
+    Type in "python cubeSolver.py" to your terminal, then click enter.
+    If this does not work, type "python3 cubeSolver.py", then click enter.
 
 Have fun!
